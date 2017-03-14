@@ -33,7 +33,7 @@ $ python3 setup.py install
 $ pip3 install netease-dl
 ```
 
-p.s: 目前仅支持Python3.x，Python2.x过段时间也会支持。
+p.s: 目前仅支持Python3.x，Python2.x以后也会支持。
 
 
 ## 功能特性
@@ -84,7 +84,7 @@ Select one song [1]:
 Downlaoding 成都 12831kb  [####################################]  100%
 ```
 
-可以在`song`命令前面加一个`--quiet`，`netease-dl`会自动匹配第一个选项：
+上面会返回10条搜索结果，可以在`song`命令前面加一个`--quiet`，`netease-dl`会自动匹配第一个第一个返回的结果：
 ```
 $ netease-dl --quiet song --name 成都
 Downlaoding 成都 12831kb  [####################################]  100%
@@ -96,7 +96,7 @@ $ netease-dl song --id 436514312
 Downlaoding 成都 12831kb  [####################################]  100%
 ```
 
-子命令所支持的特性都可以通过在`song`命令后面加一个`--help`选项来查看：
+`netease-dl`的所有子命令所支持的特性都可以通过在子命令后面加一个`--help`选项来查看：
 ```
 $ netease-dl song --help
 Usage: netease-dl song [OPTIONS]
@@ -127,6 +127,8 @@ Cost 215s
 
 ### 下载一张唱片的所有歌曲
 
+使用`album`命令，后面接`--name`或者`-n`选项来指定唱片的名字：
+
 ```
 $ netease-dl album --name 范特西
 +----------+-------------------+-----------------+
@@ -146,6 +148,7 @@ Cost 24s
 
 ### 下载一张歌单的所有歌曲
 
+使用`playlist`命令，后面接`--name`或者`-n`选项来指定歌单的名字：
 ```
 $ netease-dl playlist --name 美国Billboard周榜
 +----------+------------------------------------+
@@ -193,7 +196,7 @@ Please enter your password:
 |    2     |            子文歇收藏的音乐             |
 ...
 +----------+--------------------------------------+
-Select one playlist[1]:
+Select one playlist [1]:
 ...
 ```
 
