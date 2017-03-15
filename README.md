@@ -223,8 +223,8 @@ $ netease-dl -o music artist -n 周杰伦
 
 海外用户可能要设置相关的代理，`netease-dl`同时支持http和socks协议代理，注意要声明代理所使用的协议：
 ```
-$ netease-dl -p http://127.0.0.1:8118' artist -n 周杰伦
-$ netease-dl -p socks5://127.0.0.1:1080' artist -n 周杰伦
+$ netease-dl -p 'http://127.0.0.1:8118' artist -n 周杰伦
+$ netease-dl -p 'socks5://127.0.0.1:1080' artist -n 周杰伦
 ```
 
 
