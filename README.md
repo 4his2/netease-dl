@@ -115,6 +115,7 @@ Options:
 $ netease-dl artist --name 陈奕迅
 Downlaoding 陪你度过漫长岁月 9471kb  [####################################]  100%
 Downlaoding 不要说话 11149kb  [####################################]  100%
+Downlaoding 红玫瑰 9376kb  [####################################]  100%
 ...
 Cost 215s
 ```
@@ -156,6 +157,7 @@ Cost 152s
 
 ```
 $ netease-dl user --name 子文歇
+...
 Downlaoding Apologize 8131kb  [####################################]  100%
 Downlaoding Thank You 8537kb  [####################################]  100%
 Downlaoding Girl In The Mirror 8506kb  [####################################]  100%
