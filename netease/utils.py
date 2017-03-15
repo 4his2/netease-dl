@@ -49,7 +49,6 @@ class Display(object):
 
         if len(albums) == 1:
             select_i = 0
-
         else:
             table = PrettyTable(['Sequence', 'Album Name', 'Artist Name'])
             for i, album in enumerate(albums, 1):
