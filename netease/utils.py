@@ -92,7 +92,7 @@ class Display(object):
 
     @staticmethod
     def select_one_playlist(playlists):
-        """Display the playlists returned search api or user playlist.
+        """Display the playlists returned by search api or user playlist.
 
         :params playlists: API['result']['playlists'] or API['playlist']
         :return: a Playlist object.
@@ -117,7 +117,7 @@ class Display(object):
 
     @staticmethod
     def select_one_user(users):
-        """Display the users returned search api.
+        """Display the users returned by search api.
 
         :params users: API['result']['userprofiles']
         :return: a User object.

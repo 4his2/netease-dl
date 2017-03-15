@@ -2,7 +2,7 @@
 
 """
 netease-dl.config
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 Configuration file.
 """
