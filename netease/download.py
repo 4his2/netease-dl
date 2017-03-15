@@ -40,7 +40,7 @@ def login(method):
     """Require user to login."""
 
     def wrapper(*args, **kwargs):
-        crawler = args[0].crawler  # args[0] is a Crawler object
+        crawler = args[0].crawler  # args[0] is a NetEase object
 
         try:
             if os.path.isfile(cookie_path):
@@ -55,7 +55,7 @@ def login(method):
             else:
                 crawler.login()
         except RequestException:
-            click.echo('Maybe password error and please try again.')
+            click.echo('Maybe password error, please try again.')
             sys.exit(1)
         result = method(*args, **kwargs)
         return result
@@ -75,7 +75,7 @@ class NetEase(object):
             if again:
                 self.crawler.login()
         except RequestException:
-            click.echo('Maybe password error and please try again.')
+            click.echo('Maybe password error, please try again.')
 
     def download_song_by_search(self, song_name):
         """Download a song by its name.
@@ -126,6 +126,7 @@ class NetEase(object):
     def download_album_by_id(self, album_id, album_name):
         """Download a album by its name.
 
+        :params album_id: album id.
         :params album_name: album name.
         """
 
@@ -190,6 +191,7 @@ class NetEase(object):
         """Download a playlist's songs by its id.
 
         :params playlist_id: playlist id.
+        :params playlist_name: playlist name.
         """
 
         try:
