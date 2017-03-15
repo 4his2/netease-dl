@@ -41,7 +41,7 @@ def exception_handle(method):
             raise ProxyError('A proxy error occurred.')
         except ConnectionException:
             LOG.exception('ConnectionError when try to get %s.', args)
-            raise ConnectionException('DNS failure, refused connection, etc')
+            raise ConnectionException('DNS failure, refused connection, etc.')
         except Timeout:
             LOG.exception('Timeout when try to get %s', args)
             raise Timeout('The request timed out.')

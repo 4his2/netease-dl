@@ -1,13 +1,15 @@
+# -*- coding: utf-8 -*-
+
 """
 @Author: ziwenxie
 @Date:   2017-03-04 20:00:30
 """
-
 from setuptools import setup, find_packages
+
 
 setup(
     name='netease-dl',
-    version='0.1.0',
+    version='1.0.0',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
@@ -26,6 +28,6 @@ setup(
     author='ziwenxie',
     author_email='ziwenxiecat@gmail.com',
     url='https://github.com/ziwenxie/netease-dl',
-    description='A command tool to download NetEase-Music\'s songs.',
+    description='一个基于命令行的网易云音乐下载器',
     keywords=['music', 'netease', 'download', 'command tool'],
 )
