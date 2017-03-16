@@ -14,9 +14,9 @@ setup(
     include_package_data=True,
     install_requires=[
         'requests>=2.10.0',
-        'pycrypto>=2.6.1'
-        'click>=5.1'
-        'PrettyTable>=0.7.2'
+        'pycrypto>=2.6.1',
+        'click>=5.1',
+        'PrettyTable>=0.7.2',
     ],
 
     entry_points='''
