@@ -105,6 +105,8 @@ class NetEase(object):
                 lyric_info = self.crawler.get_song_lyric(song_id)
             else:
                 lyric_info = None
+            song_name = song_name.replace('/', '')
+            song_name = song_name.replace('.', '')
             self.crawler.get_song_by_url(url, song_name, folder, lyric_info)
         except RequestException as exception:
             click.echo(exception)
