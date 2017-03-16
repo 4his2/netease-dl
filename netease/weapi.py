@@ -343,17 +343,18 @@ class Crawler(object):
             os.makedirs(folder)
         fpath = os.path.join(folder, song_name+'.mp3')
 
-        resp = self.download_session.get(
-            song_url, timeout=self.timeout, stream=True)
-        length = int(resp.headers.get('content-length'))
-        label = 'Downlaoding {} {}kb'.format(song_name, int(length/1024))
+        if not os.path.exists(fpath):
+            resp = self.download_session.get(
+                song_url, timeout=self.timeout, stream=True)
+            length = int(resp.headers.get('content-length'))
+            label = 'Downlaoding {} {}kb'.format(song_name, int(length/1024))
 
-        with click.progressbar(length=length, label=label) as progressbar:
-            with open(fpath, 'wb') as song_file:
-                for chunk in resp.iter_content(chunk_size=1024):
-                    if chunk:  # filter out keep-alive new chunks
-                        song_file.write(chunk)
-                        progressbar.update(1024)
+            with click.progressbar(length=length, label=label) as progressbar:
+                with open(fpath, 'wb') as song_file:
+                    for chunk in resp.iter_content(chunk_size=1024):
+                        if chunk:  # filter out keep-alive new chunks
+                            song_file.write(chunk)
+                            progressbar.update(1024)
 
         if lyric_info:
             folder = os.path.join(folder, 'lyric')
