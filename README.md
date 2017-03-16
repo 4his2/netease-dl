@@ -15,6 +15,7 @@
 * [更多选项](#更多选项)
     * [将歌曲下载到指定路径](#将歌曲下载到指定路径)
     * [设置代理](#设置代理)
+    * [更新日志](#更新日志)
 * [Contact](#contact)
 
 <!-- vim-markdown-toc -->
@@ -198,6 +199,9 @@ $ netease-dl -p 'http://127.0.0.1:8118' artist -n 周杰伦
 $ netease-dl -p 'socks5://127.0.0.1:1080' artist -n 周杰伦
 ```
 
+### 更新日志
+
+2017-03-16 版本 1.0.1 fix dependicies problem(#1)
 
 
 ## Contact
