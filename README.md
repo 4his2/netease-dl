@@ -201,7 +201,7 @@ $ netease-dl -p 'socks5://127.0.0.1:1080' artist -n 周杰伦
 
 ### 更新日志
 
-2017-03-16 版本 1.0.1 fix dependicies problem(#1)
+2017-03-16 1.0.1 fix dependencies problem(#1)
 
 
 ## Contact
