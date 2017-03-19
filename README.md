@@ -201,6 +201,7 @@ $ netease-dl -p 'socks5://127.0.0.1:1080' artist -n 周杰伦
 
 ## 更新日志
 
+2017-03-19 1.0.2 fix song may contains special character and won't download again if song exists(#2, #3)
 2017-03-16 1.0.1 fix dependencies problem(#1)
 
 
