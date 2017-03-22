@@ -210,4 +210,3 @@ $ netease-dl -p 'socks5://127.0.0.1:1080' artist -n 周杰伦
 
 Email: ziwenxiecat@gmail.com
 Blog: www.ziwenxie.site
-WeChat: ziwenxie97
