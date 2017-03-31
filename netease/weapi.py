@@ -119,6 +119,7 @@ class Crawler(object):
         """Search song by song name.
 
         :params song_name: song name.
+        :params quiet: automatically select the best one.
         :params limit: song count returned by weapi.
         :return: a Song object.
         """
@@ -141,6 +142,7 @@ class Crawler(object):
         """Search album by album name.
 
         :params album_name: album name.
+        :params quiet: automatically select the best one.
         :params limit: album count returned by weapi.
         :return: a Album object.
         """
@@ -163,6 +165,7 @@ class Crawler(object):
         """Search artist by artist name.
 
         :params artist_name: artist name.
+        :params quiet: automatically select the best one.
         :params limit: artist count returned by weapi.
         :return: a Artist object.
         """
@@ -185,6 +188,7 @@ class Crawler(object):
         """Search playlist by playlist name.
 
         :params playlist_name: playlist name.
+        :params quiet: automatically select the best one.
         :params limit: playlist count returned by weapi.
         :return: a Playlist object.
         """
@@ -207,6 +211,7 @@ class Crawler(object):
         """Search user by user name.
 
         :params user_name: user name.
+        :params quiet: automatically select the best one.
         :params limit: user count returned by weapi.
         :return: a User object.
         """
