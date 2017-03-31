@@ -137,14 +137,14 @@ $ netease-dl --again me
 
 ### 将歌曲下载到指定路径
 
-将下载到的歌曲全部存储到当前路径下的music目录下面：
+使用`--output`或者`-o`选项指定下载路径：
 ```
 $ netease-dl -o 路径名 artist -n 歌手名
 ```
 
 ### 设置代理
 
-海外用户可能要设置相关的代理，`netease-dl`同时支持http和socks协议代理，注意要声明代理所使用的协议：
+海外用户可能要设置相关的代理，`netease-dl`同时支持http和socks协议代理，可以通过`--proxy`或者`-p`选项指定，注意要声明代理所使用的协议：
 ```
 $ netease-dl -p 'http://127.0.0.1:8118' artist -n 歌手名
 $ netease-dl -p 'socks5://127.0.0.1:1080' artist -n 歌手名
