@@ -161,3 +161,7 @@ $ netease-dl -p 'socks5://127.0.0.1:1080' artist -n 歌手名
 
 Email: ziwenxiecat@gmail.com
 Blog: www.ziwenxie.site
+
+## License
+
+https://github.com/ziwenxie/netease-dl/blob/master/LICENSE
