@@ -348,6 +348,12 @@ class Crawler(object):
             os.makedirs(folder)
         fpath = os.path.join(folder, song_name+'.mp3')
 
+        if sys.platform == 'win32' or sys.platform == 'cygwin':
+            valid_name = re.sub(r'[<>:"/\\|?*]', '', song_name)
+            if valid_name != song_name:
+                click.echo('{} will be saved as: {}.mp3'.format(song_name, valid_name))
+                fpath = os.path.join(folder, valid_name + '.mp3')
+
         if not os.path.exists(fpath):
             resp = self.download_session.get(
                 song_url, timeout=self.timeout, stream=True)
