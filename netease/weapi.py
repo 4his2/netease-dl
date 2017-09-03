@@ -358,7 +358,7 @@ class Crawler(object):
             resp = self.download_session.get(
                 song_url, timeout=self.timeout, stream=True)
             length = int(resp.headers.get('content-length'))
-            label = 'Downlaoding {} {}kb'.format(song_name, int(length/1024))
+            label = 'Downloading {} {}kb'.format(song_name, int(length/1024))
 
             with click.progressbar(length=length, label=label) as progressbar:
                 with open(fpath, 'wb') as song_file:
