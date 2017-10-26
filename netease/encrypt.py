@@ -10,7 +10,7 @@ import os
 import base64
 import json
 import binascii
-from Crypto.Cipher import AES
+from Cryptodome.Cipher import AES
 
 from .config import modulus, nonce, pub_key
 
@@ -18,7 +18,7 @@ from .config import modulus, nonce, pub_key
 def encrypted_request(text):
     text = json.dumps(text)
     sec_key = create_secret_key(16)
-    enc_text = aes_encrypt(aes_encrypt(text, nonce), sec_key)
+    enc_text = aes_encrypt(aes_encrypt(text, nonce), sec_key.decode('utf-8'))
     enc_sec_key = rsa_encrpt(sec_key, pub_key, modulus)
     data = {'params': enc_text, 'encSecKey': enc_sec_key}
     return data
@@ -27,8 +27,8 @@ def encrypted_request(text):
 def aes_encrypt(text, secKey):
     pad = 16 - len(text) % 16
     text = text + chr(pad) * pad
-    encryptor = AES.new(secKey, 2, '0102030405060708')
-    ciphertext = encryptor.encrypt(text)
+    encryptor = AES.new(secKey.encode('utf-8'), AES.MODE_CBC, b'0102030405060708')
+    ciphertext = encryptor.encrypt(text.encode('utf-8'))
     ciphertext = base64.b64encode(ciphertext).decode('utf-8')
     return ciphertext
 
