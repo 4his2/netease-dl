@@ -34,13 +34,15 @@ signal.signal(signal.SIGINT, signal_handler)
 @click.option('-p', '--proxy', help='Use the specified HTTP/HTTPS/SOCKS proxy.')
 @click.option('-o', '--output', type=click.Path(exists=True),
               help='Specify the storage path.')
+@click.option('-h', '--header', multiple=True, help='Extra header(s) for HTTP requests.')
 @click.option('-q', '--quiet', is_flag=True, help='Automatically select the best one.')
 @click.option('-l', '--lyric', is_flag=True, help='Download lyric.')
 @click.option('-a', '--again', is_flag=True, help='Login Again.')
 @click.pass_context
-def cli(ctx, timeout, proxy, output, quiet, lyric, again):
+def cli(ctx, timeout, proxy, output, headers, quiet, lyric, again):
     """A command tool to download NetEase-Music's songs."""
-    ctx.obj = NetEase(timeout, proxy, output, quiet, lyric, again)
+    headers = dict(map(lambda h: re.split(':\s?', h), headers))
+    ctx.obj = NetEase(timeout, proxy, output, headers, quiet, lyric, again)
 
 
 @cli.command()
