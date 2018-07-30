@@ -8,6 +8,7 @@ Entrance of netease-dl.
 """
 import signal
 import sys
+import re
 
 import click
 
