@@ -353,11 +353,11 @@ class Crawler(object):
             if valid_name != song_name:
                 click.echo('{} will be saved as: {}.mp3'.format(song_name, valid_name))
                 fpath = os.path.join(folder, valid_name + '.mp3')
-
-        if not os.path.exists(fpath):
+                
+        length = int(resp.headers.get('content-length'))
+        if not os.path.exists(fpath) or os.path.getsize(fpath) < length:
             resp = self.download_session.get(
                 song_url, timeout=self.timeout, stream=True)
-            length = int(resp.headers.get('content-length'))
             label = 'Downloading {} {}kb'.format(song_name, int(length/1024))
 
             with click.progressbar(length=length, label=label) as progressbar:
