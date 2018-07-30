@@ -40,9 +40,9 @@ signal.signal(signal.SIGINT, signal_handler)
 @click.option('-l', '--lyric', is_flag=True, help='Download lyric.')
 @click.option('-a', '--again', is_flag=True, help='Login Again.')
 @click.pass_context
-def cli(ctx, timeout, proxy, output, headers, quiet, lyric, again):
+def cli(ctx, timeout, proxy, output, header, quiet, lyric, again):
     """A command tool to download NetEase-Music's songs."""
-    headers = dict(map(lambda h: re.split(':\s?', h), headers))
+    headers = dict(map(lambda h: re.split(':\s?', h), header))
     ctx.obj = NetEase(timeout, proxy, output, headers, quiet, lyric, again)
 
 
