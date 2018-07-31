@@ -55,13 +55,14 @@ def exception_handle(method):
 class Crawler(object):
     """NetEase Music API."""
 
-    def __init__(self, timeout=60, proxy=None):
+    def __init__(self, timeout=60, proxy=None, headers={}):
         self.session = requests.Session()
         self.session.headers.update(headers)
         self.session.cookies = cookielib.LWPCookieJar(cookie_path)
         self.download_session = requests.Session()
         self.timeout = timeout
         self.proxies = {'http': proxy, 'https': proxy}
+        self.headers = headers
 
         self.display = Display()
 
@@ -74,7 +75,8 @@ class Crawler(object):
         """
 
         resp = self.session.get(url, timeout=self.timeout,
-                                proxies=self.proxies)
+                                proxies=self.proxies,
+                                headers=self.headers)
         result = resp.json()
         if result['code'] != 200:
             LOG.error('Return %s when try to get %s', result, url)
@@ -91,7 +93,8 @@ class Crawler(object):
 
         data = encrypted_request(params)
         resp = self.session.post(url, data=data, timeout=self.timeout,
-                                 proxies=self.proxies)
+                                 proxies=self.proxies,
+                                 headers=self.headers)
         result = resp.json()
         if result['code'] != 200:
             LOG.error('Return %s when try to post %s => %s',

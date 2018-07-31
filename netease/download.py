@@ -66,11 +66,12 @@ def login(method):
 class NetEase(object):
     """Provide download operation."""
 
-    def __init__(self, timeout, proxy, folder, quiet, lyric, again):
-        self.crawler = Crawler(timeout, proxy)
+    def __init__(self, timeout, proxy, folder, headers, quiet, lyric, again):
+        self.crawler = Crawler(timeout, proxy, headers)
         self.folder = '.' if folder is None else folder
         self.quiet = quiet
         self.lyric = lyric
+        self.headers = headers
         try:
             if again:
                 self.crawler.login()
